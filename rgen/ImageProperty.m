@@ -54,14 +54,14 @@
      format:
      @"return self->%@ == nil ? i(@\"%@\") : [[self->%@ retain] autorelease];",
      self.name,
-     [self.path escapeCString],
+     [[self.path stringByDeletingPathExtension] escapeCString],
      self.name];
   } else {
     [method
      addLineIndent:1
      format:
      @"return i(@\"%@\");",
-     [self.path escapeCString]];
+     [[self.path stringByDeletingPathExtension] escapeCString]];
   }
 }
 
