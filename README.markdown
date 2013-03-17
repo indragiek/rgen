@@ -50,7 +50,7 @@ This is very nice for several reasons
 
 Homebrew:
 
-	$ brew install --HEAD https://raw.github.com/wader/rgen/master/homebrew/rgen.rb
+	$ brew install --HEAD https://raw.github.com/indragiek/rgen/master/homebrew/rgen.rb
 
 Compile from source:
 

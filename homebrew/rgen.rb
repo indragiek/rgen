@@ -1,8 +1,8 @@
 require 'formula'
 
 class Rgen < Formula
-  head 'https://github.com/wader/rgen.git', :branch => 'master'
-  homepage 'https://github.com/wader/rgen'
+  head 'https://github.com/indragiek/rgen.git', :branch => 'master'
+  homepage 'https://github.com/indragiek/rgen'
 
   def install
     system "xcodebuild", "-project", "rgen.xcodeproj",
