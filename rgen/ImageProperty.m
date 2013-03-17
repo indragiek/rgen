@@ -35,18 +35,18 @@
        generator:(ResourcesGenerator *)generator {
   [classGenerator
    addPropertyName:self.name
-   line:@"@property(nonatomic, readonly) UIImage *%@; //!< %@",
+   line:@"@property(nonatomic, readonly) NSImage *%@; //!< %@",
    self.name,
    self.path];
   
   MethodGenerator *method = [classGenerator
 			     addMethodName:self.name
 			     declaration:NO
-			     signature:@"- (UIImage *)%@", self.name];
+			     signature:@"- (NSImage *)%@", self.name];
   if (generator.optionLoadImages) {
     [classGenerator
      addVariableName:self.name
-     line:@"UIImage *%@;",
+     line:@"NSImage *%@;",
      self.name];
     
     [method

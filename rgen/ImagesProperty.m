@@ -47,7 +47,7 @@
   }
   
   MethodGenerator *iMethod = [[[MethodGenerator alloc]
-			       initWithSignature:@"static UIImage *i(NSString *path)"]
+			       initWithSignature:@"static NSImage *i(NSString *path)"]
 			      autorelease];
   if ([ipadSuffixes count] > 0) {
     MethodGenerator *isIpadMethod = [[[MethodGenerator alloc] 
@@ -77,14 +77,14 @@
     [iMethod addLineIndent:2 format:@"NSString *prefix = [path stringByDeletingPathExtension];"];
     [iMethod addLineIndent:2 format:@"NSString *ext = [path pathExtension];"];
     [iMethod addLineIndent:2 format:@"for (NSString *suffix in suffixes) {"];
-    [iMethod addLineIndent:3 format:@"UIImage *image = [UIImage imageNamed:[[prefix stringByAppendingString:suffix] stringByAppendingPathExtension:ext]];"];
+    [iMethod addLineIndent:3 format:@"NSImage *image = [NSImage imageNamed:[[prefix stringByAppendingString:suffix] stringByAppendingPathExtension:ext]];"];
     [iMethod addLineIndent:3 format:@"if (image != nil) {"];
     [iMethod addLineIndent:4 format:@"return image;"];
     [iMethod addLineIndent:3 format:@"}"];
     [iMethod addLineIndent:2 format:@"}"];
     [iMethod addLineIndent:1 format:@"}"];
   }
-  [iMethod addLineIndent:1 format:@"return [UIImage imageNamed:path];"];
+  [iMethod addLineIndent:1 format:@"return [NSImage imageNamed:path];"];
   
   [s appendFormat:@"%@\n", iMethod];
   [s appendFormat:@"%@ *I;\n", self.className];
