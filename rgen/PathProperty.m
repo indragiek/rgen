@@ -46,7 +46,7 @@
    addLineIndent:1
    format:
    @"return p(@\"%@\");",
-   [self.path escapeCString]];
+   [[self.path stringByDeletingPathExtension] escapeCString]];
 }
 
 @end
