@@ -31,11 +31,11 @@
 @implementation StringKeysProperty
 
 - (NSString *)headerProlog:(ResourcesGenerator *)generator {
-  return [NSString stringWithFormat:@"%@ *S;\n", self.className];
+  return [NSString stringWithFormat:@"%@ *rsrcS;\n", self.className];
 }
 
 - (NSString *)implementationProlog:(ResourcesGenerator *)generator {
-  return [NSString stringWithFormat:@"%@ *S;\n", self.className];
+  return [NSString stringWithFormat:@"%@ *rsrcS;\n", self.className];
 }
 
 - (void)generate:(ClassGenerator *)classGenerator
@@ -46,7 +46,7 @@
 						      signature:@"+ (void)load"];
     [loadMethod
      addLineIndent:1
-     format:@"S = [[%@ alloc] init];", self.className];
+     format:@"rsrcS = [[%@ alloc] init];", self.className];
   }
   
   MethodGenerator *initMethod = [classGenerator addMethodName:@"1init"
